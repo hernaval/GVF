@@ -31,6 +31,12 @@
               
         }
 
+        public function countClient(){
+            $d = $this->Client->count();
+
+            print_r($d);
+        }
+
         public function createAccount(){
             if(isset($_POST['register'])){
                 $pass = md5($_POST['motdepasse']);

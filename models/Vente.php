@@ -31,10 +31,31 @@
         //selection des informations completes d'une transaction
         public function get(){
            return $this->select(array(
-                'tables' => " $this->_table,clients,films",
+                'tables' => " $this->_table,clients,films,disponibilites",
                 'condition' => " $this->_table.TelephoneClient = clients.TelephoneClient
-                 and $this->_table.IdFilm = films.IdFilm group by $this->_table.DateAchat "
+                 and $this->_table.IdFilm = films.IdFilm and films.IdFilm = disponibilites.IdFilm  "
             ),false);
+        }
+
+        
+        public function count(){
+            return $this->calcul(array(
+                'function' => "sum",
+
+                "fields" => "PrixAchat*Quantite",
+                "name" => "revenu",
+                'others' => ",DateAchat",
+                'table' =>$this->_table,
+                "condition" => "1=1 group by DateAchat",
+            ));
+        }
+
+        public function annuler(){
+            $this->delete(array(
+                'tables' => $this->_table,
+                "condition" => " Ref = '".$this->_ref."' and IdFilm = '".$this->_idFilm."'
+                 and PrixAchat = '$this->_prixAchat'   "
+            ));
         }
 
         //selection du client correspondant a un num 
@@ -51,7 +72,7 @@
         public function getPrix($id,$qal){
             return $this->select(array(
                 'tables' => 'disponibilites',
-                'condition' => " IdFilm = '$id' and NomQualite = '$qal' "
+                'condition' => " IdFilm = '$id'  and NomQualite = '$qal' "
             ),false);
         }
 
@@ -64,6 +85,17 @@
             ));
         }
 
+        public function majNb2($nb,$idfilm,$n){
+            $this->update(array(
+                'table' => "Disponibilites",
+                'modif' => " NbExemplaire  = NbExemplaire + $nb ",
+                'condition' => " idFilm = '$idfilm' and NomQualite = '".$n."' "
+            ));
+        }
+
+        function setREf($ref){
+            $this->_ref = $ref;
+        }
         
         function setTelephoneClient($tel){
             $this->_telephoneClient = $tel;

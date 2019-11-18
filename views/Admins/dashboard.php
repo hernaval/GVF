@@ -4,7 +4,7 @@
         <div class="col-lg-7">
             <div class="card shadow ">
                 <div class="card-header bg-light">
-                    <h3 class="text-muted">Revenu mensuel</h3>
+                    <h3 class="text-muted">Revenu Journalier</h3>
                 </div>
                 <div class="card-body">
                    <div class="chart-container">

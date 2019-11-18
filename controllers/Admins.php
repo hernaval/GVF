@@ -45,7 +45,7 @@
            
                 $d = array();
                 $d['dispo'] = $this->Admin->getNbFilm();
-                print_r($d);
+                
                  $this->set($d);
                 $this->renderS('notification');
                 
@@ -57,6 +57,17 @@
     
             header("location:loginPage");
             
+        }
+
+        public function loginAjax(){
+            $id = $_POST['username'];
+            $pass =$_POST['password'];
+            $this->Admin->setIdAdmin($id);
+            $this->Admin->setPassAdmin($pass);
+           
+           $_SESSION['username'] = $id;
+            $d = $this->Admin->getLogin();
+            echo $d;
         }
     }
         

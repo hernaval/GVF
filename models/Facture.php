@@ -9,19 +9,25 @@
 
         public function getFacture($ref){
             return $this->select(array(
-                'tables' => "$this->_table,Clients,Ventes ",
+                'tables' => "$this->_table,Clients,Ventes, Disponibilites ",
                 'condition' => " $this->_table.Ref = Ventes.Ref and Ventes.TelephoneClient=Clients.TelephoneClient 
-                 and $this->_table.Ref =  '".$ref."'
+                 and Disponibilites.idFilm = Ventes.IdFilm and Ventes.Ref =  '".$ref."'
                  "
             ),false);
         }
 
+        
+
         public function factureList(){
             return $this->select(array(
-                'tables' => $this->_table,
-                'condition' => "1=1"
+                'tables' => "$this->_table,Ventes,Clients,Disponibilites",
+                'condition' => "$this->_table.Ref = Ventes.Ref and Ventes.TelephoneClient = Clients.TelephoneClient 
+                and Disponibilites.IdFilm = Ventes.IdFilm
+                group by $this->_table.Ref  "
             ),false);
         }
+
+        
 
         public function setRef($ref){
             $this->_ref = $ref;

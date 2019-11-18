@@ -4,10 +4,6 @@
 
     <!--a remettre dans un fichier propre js-->
    
-        
-        
-  
-       
         <div  class="container-fluid">
             <div  class="row">
                 <div class="col-lg-3">
@@ -32,7 +28,7 @@
                          <div  class="col-6" id="container"></div>
                     </div>
                     
-                    
+                    <div class="text-danger" id="erreur"></div>
                     
                     <script src="<?php echo WEBROOT?>assets/js/imprevu.js"></script>
                     <div>
@@ -40,7 +36,7 @@
                </div>
                <div class="modal-footer">
                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                   <button type="submit" class="btn btn-primary">MAJ</button>
+                   <button id="btnMaj" type="submit" class="btn btn-primary">MAJ</button>
                </div>
                </form>
            </div>

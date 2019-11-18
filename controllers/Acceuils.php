@@ -6,5 +6,14 @@
             
            $this->render('index');
         }
+
+        public function setCount(){
+            $d = $this->Acceuil->count();
+
+            print_r($d);
+        }
+
     }
+         
+     
 ?>

@@ -61,6 +61,26 @@
           $con = new PDO("mysql:host=localhost;dbname=gvf","root","");
           $req = $con->query("delete from $tables where $condition");
         }
+
+        public function calcul($data = array()){
+         
+          $table="";
+          $function="";
+          $fields="";
+          $others="";
+          $condition="";
+          $name="";
+          extract($data);
+          $con = new PDO("mysql:host=localhost;dbname=gvf","root","");
+          $req = $con->query("select $function($fields) as $name $others from $table where $condition ");
+
+          $d = array();
+          while($data = $req->fetch()){
+            $d[] = $data;
+          }
+          return $d;
+
+        }
     
 
 }

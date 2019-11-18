@@ -30,8 +30,7 @@
                                             <td><?php echo $value['IdAdmin'] ?></td>
                                            
                                             <td style="text-align:center">
-                                                <a href="#" id="<?php  echo $value['Ref']?>"data-toggle="modal" data-target="#modalEditFacture<?php echo $value['Ref'] ?>" ><i class="fas fa-edit fa-lg text-success"></i></a>
-                                                <?php require "modalEditFacture.php" ?>
+                                                <a href="modif/<?php echo $value['Ref'] ?>" ><i class="fas fa-edit fa-lg text-success"></i></a>
                                                 <a href="factureViewer/<?php echo $value['Ref'] ?> "><i class="fas fa-eye fa-lg text-default"></i></a>
                                             </td>
                                         </tr>

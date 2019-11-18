@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?php echo WEBROOT ?>assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php echo WEBROOT ?>assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/agency.min.css">
+    
    
     
 
@@ -123,6 +124,7 @@
     <script src="<?php echo  WEBROOT ?>assets/bootstrap-4.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo  WEBROOT ?>assets/js/jquery.easing.min.js"></script>
     <script src="<?php echo  WEBROOT ?>assets/js/owl.carousel.min.js"></script>
+    <
     <script src="<?php echo  WEBROOT ?>assets/js/jquery.waypoints.min.js"></script>
     <script src="<?php echo  WEBROOT ?>assets/js/jquery.counter-up.min.js"></script>
     

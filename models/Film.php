@@ -81,6 +81,13 @@
             ),false);
         }
 
+        public function count(){
+            return $this->select(array(
+                'tables' => $this->_table,
+                "condition" => "1=1"
+            ),true);
+        }
+
         public function hydrate(array $donnees){
             foreach ($donnees as $key => $value) {
                $method = 'set'.ucfirst($key);

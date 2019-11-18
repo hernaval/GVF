@@ -29,6 +29,13 @@
                 "val" => " '".$this->_telephoneClient."', '".$this->_nomClient."', '".$this->_prenomClient."' "
             ));
         }
+
+        public function count(){
+            return $this->select(array(
+                'tables' => $this->_table,
+                "condition" => "1=1"
+            ),true);
+        }
         public function get($email){
             return $this->select(array(
                 'tables' => 'Comptes',

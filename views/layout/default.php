@@ -100,6 +100,10 @@
 	transition:0.5s;
 }
 
+.fa-jedi{
+   animation: spin 4s linear infinite;
+}
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
     </style>
 
@@ -111,6 +115,7 @@
     
     <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
             <div class="container">
+                    <i class="fas fa-jedi fa-2x text-danger    "></i>
                    <a class="navbar-brand js-scroll-trigger" href="#page-top">i-jery Store</a>
                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         Menu
@@ -158,7 +163,7 @@
                         <div class="intro-text">
                             <div class="intro-lead-in animated slideInUp"> Welcome to our Store! </div>
                             <div class="intro-heading text-uppercase animated slideInDown">Glad to receive you</div>
-                            <a href="#services" class="btn btn-primary btn-xl js-scroll-trigger">En savoir d'avantage</a>
+                            
                         </div>
                     </div>
             </header>
@@ -199,12 +204,12 @@
            <div class="row text-center">
                <div class="col-sm-3 pt-3 ">
                    <i class="fa fa-user fa-3x" aria-hidden="true"></i>
-                   <div><span class="count value">200</span><i class="fa fa-plus" aria-hidden="true"></i></div> 
+                   <div><span  class=" countClient count value"></span><i class="fa fa-plus" aria-hidden="true"></i></div> 
                    <p>Clients</p>
                </div>
                <div class="col-sm-3 pt-3">
                    <i class="fas fa-tv fa-3x"></i>
-                   <div><span class="count value">900</span><i class="fa fa-plus" aria-hidden="true"></i></div> 
+                   <div><span  class=" countFilm count value"></span><i class="fa fa-plus" aria-hidden="true"></i></div> 
                     <p>Films à la disposition </p>
                 </div>
                 <div class="col-sm-3 pt-3">
@@ -214,7 +219,7 @@
                 </div>
                 <div class="col-sm-3 pt-3">
                         <i class="fa fa-balance-scale fa-3x" aria-hidden="true"></i>
-                        <div><span class="count value">1000</span><i class="fa fa-plus" aria-hidden="true"></i></div> 
+                        <div><span class=" count value">25</span><i class="fa fa-plus" aria-hidden="true"></i></div> 
                         <p>Ventes réalisées</p>
                         
                 </div>
@@ -457,7 +462,7 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">DIVERS</h2>
-                        <h3 class="section-subheading text-muted">Quelques avis de nos fidèls clients</h3>
+                        <h3 class="section-subheading text-muted">Mettez vous à l'aise</h3>
                     </div>
                 </div>
 
@@ -481,10 +486,7 @@
             
                         <div class="team-back">
                             <span>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-            natoque penatibus et magnis dis parturient montes,
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-            natoque.
+                                
                            </span>
                         </div>
             
@@ -554,8 +556,12 @@
     <script src="assets/bootstrap-4.3.1/dist/js/bootstrap.bundle.js"></script>
     <script src="assets/js/jquery.easing.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/count.js"></script>
     <script src="assets/js/jquery.waypoints.min.js"></script>
     <script src="assets/js/jquery.counter-up.min.js"></script>
+
+    
+
     
     <script src="assets/js/agency.min.js"></script>
     
@@ -569,11 +575,8 @@
    
     items : 1
 });
-$('.count').counterUp({
-    delay : 10,
-    time : 1000
-});
 
+ 
 
  });
                

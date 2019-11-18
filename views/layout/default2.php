@@ -13,9 +13,8 @@
     <script src="<?php echo WEBROOT?>assets/js/jquery-3.4.1.js"></script>
     <script src="<?php echo WEBROOT?>assets/js/Chart.min.js"></script>
 
-    <script src="<?php echo WEBROOT?>assets/bootstrap-4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo WEBROOT?>assets/bootstrap-4.3.1/dist/js/bootstrap.bundle.js"></script>
     <script src="<?php echo WEBROOT?>assets/js/customChart.js"></script>
-    <script src="<?php echo WEBROOT?>assets/js/account.js"></script>
     <script src="<?php echo WEBROOT?>assets/js/account.js"></script>
     <script src="<?php echo WEBROOT?>assets/js/notif"></script>
     <script src="<?php echo WEBROOT?>assets/js/vente.js"></script>
@@ -40,6 +39,7 @@
                     <div class="row">
                          <!--sidebar-->
                             <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top ">
+                                
                                 <a href="" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">i-jery </a>
                                 <div class="border-bottom pb-3">
                                     <img src="../assets/img/naval.jpg" width="50" class='rounded-circle mr-3' alt="">
@@ -50,7 +50,7 @@
                                     <li class="nav-item"><a href="<?php echo WEBROOT ?>Films/liste" id="a" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-tv fa-2x  px-3 "></i>Films</a></li>
                                     <li class="nav-item"><a href="<?php echo WEBROOT ?>Gestions/maj" id="a" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-balance-scale fa-2x  px-3  "></i>Gestion</a></li>
                                     <li class="nav-item"><a href="<?php echo WEBROOT ?>Ventes/reg" id="a" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-shopping-cart fa-2x  px-3"></i>Ventes</a></li>
-                                    <li class="nav-item"><a href="<?php echo WEBROOT ?>Gestions/actionView" id="a" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-chart fa-2x  px-3 "></i>Actions</a></li>
+                                    <li class="nav-item"><a href="<?php echo WEBROOT ?>Gestions/actionView" id="a" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-award fa-2x  px-3 "></i>Actions</a></li>
                                     <li class="nav-item"><a href="<?php echo WEBROOT ?>Comptabilites/compta" id="a" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-table fa-2x  px-3 "></i>Recette</a></li>
                                     <li class="nav-item"><a href="<?php echo WEBROOT ?>Factures/liste" id="a" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-wrench fa-2x  px-3"></i>Factures</a></li>
 
@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="col-md-5">
                                         <form action="">
-                                            <div class="input-group">
+                                           <!-- <div class="input-group">
                
                                                     <input type="text" name="" id="search"   class="form-control search-input hover  " placeholder='search'>    
                                             
@@ -73,7 +73,7 @@
                                                     
                                                     
                                                 
-                                            </div>
+                                            </div>-->
                                         </form>
                                     </div>
                                     <div class="col-md-3">
@@ -134,7 +134,7 @@
                     <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
                         <div class="row pt-5 mt-3 mb-5">
                             <div class="col-xl-3 col-sm-6 p-2">
-                                <a href="#" class="card card-common">
+                                <div href="#" class="card card-common">
                                      <div class="card-body">
                                         <div class='d-flex justify-content-between'>
                                             <i class="fas fa-shopping-cart fa-3x text-warning "></i>
@@ -149,7 +149,7 @@
                                          <span>Update now</span>
                                      </div>
                                             
-                                </a>
+                                </div>
                             </div>
                             <div class="col-xl-3 col-sm-6 p-2">
                                 <div class="card card-common">
@@ -178,7 +178,7 @@
                                        </div>
                                        <div class="text-right text-secondary">
                                            <h5>Clients</h5>
-                                           <h3 id="clients">125</h3>
+                                           <h3 class="clientNb">6</h3>
                                        </div>
                                     </div>
                                     <div class="card-footer text-secondary">
@@ -232,7 +232,9 @@
                 scrollTop : 0
             },800);
          });
-
+        
+        
+         
 
      </script>
     
@@ -247,7 +249,7 @@
             
         });
     </script>
-        <li> <a href="http://">Vente en ligne</a> </li>
+       <!-- <li> <a href="http://">Vente en ligne</a> </li>
         <li> <a href="<?php echo WEBROOT ?>Ventes/reg">Enregistrement Vente</a> </li>     
         <li> <a href="<?php echo WEBROOT ?>Films/liste">Listes films</a> </li>
         <li> <a href="http://">Liste des  clients</a> </li>
@@ -256,7 +258,7 @@
         <li><a href="<?php echo WEBROOT ?>Comptabilites/compta">GERER les compta</a></li>
         <li><a href="<?php echo WEBROOT ?>Gestions/actionView">Les actions</a></li>
         <li><a href="notification">Notifications & alertes</a></li>
-        <li><a href="<?php echo WEBROOT?>Admins/logout">Se deconnecter</a></li>
+        <li><a href="<?php echo WEBROOT?>Admins/logout">Se deconnecter</a></li>-->
         
     </ul>
 </body>

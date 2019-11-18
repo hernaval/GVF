@@ -61,6 +61,7 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap-4.3.1/dist/js/bootstrap.bundle.js"></script>
     <script src="../assets/js/register.js"></script>
+    <script src="../assets/js/login.js"></script>
 
 
     <style>
@@ -93,7 +94,8 @@ a{
     background-color: rgba(30,30,30, 0.9);
 }
 .white-panel{
-    background-color: rgba(255,255, 255, 1);
+    background : url(../assets/img/banner.jpg) no-repeat;
+    background-size : cover;
     height:500px;
     position:absolute;
     top:-50px;
@@ -244,7 +246,7 @@ a{
 				<input type="button" value="Login">
         <a href="">Forgot password?</a>-->
         
-        <form action='../clients/login' method='post'>
+       <!-- <form action='../clients/login' method='post'>-->
             <div class="form-group">
                 <input type="text" class="form-control" name='email' id="mail" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
@@ -264,7 +266,7 @@ a{
                 <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
             </div>
 
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success">Connexion</button>
             
         </form>
 
@@ -278,20 +280,25 @@ a{
         
         <form action="checkLog" method="post">
       <div class="form-group">
-        <input type="text" class="form-control" name="username" id="" aria-describedby="helpId" placeholder="Username">
+        <input type="text" class="form-control" name="username" id="userAdmin" aria-describedby="helpId" placeholder="Username">
       </div>
 
       <div class="form-group">
-        <input type="password" class="form-control" name="password" id="" placeholder="Password">
+        <input type="password" class="form-control" name="password" id="passAdmin" placeholder="Password">
       </div>
 
       <label class="custom-control custom-checkbox">Se souvernir de moi
         <input class="text-warning" type="checkbox" name="" id="" value="checkedValue" >
       </label>
 
+    <div>
+     <small class="text-white" id="timer"></small>
+    </div>
+      <!--<input type="submit"class="btn btn-success" name='connecter' value="Connexion">-->
+
       
-      <input type="submit"class="btn btn-success" name='connecter' value="Connecter">
-   </form>
+     <a id="btnLogin" onclick ="teste()"href="#" class="btn btn-success  ">Connexion</a>
+  <!-- </form>-->
 
 			</div>
 		</div>

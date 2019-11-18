@@ -93,5 +93,17 @@
                 
               echo json_encode($a);
         }
+
+        public function modifFilm(){
+
+            $n = $_POST['qtAjout'];
+            $film = array(
+                'idFilm' => $_POST['idfilm'],
+                'prixFilm' => $_POST['prixChange']
+            );
+            $this->Disponibilite->hydrate($film);
+            $this->Disponibilite->edit($n);
+            
+        }
     }
 ?>

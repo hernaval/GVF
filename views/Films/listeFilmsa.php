@@ -23,7 +23,7 @@
                                 <div class="card shadow">
                                     <div class="card-header shadow">
                                     <div class="d-flex justify-content-start">
-                                        <h3 class='text-center text-muted font-weight-bold'>Films</h3>
+                                        <h3 class='text-center text-muted font-weight-bold'>Films & Stocks</h3>
                                         <button type="button" class="btn  btn-primary btn-lg ml-auto" data-toggle="modal" data-target="#modelId">
                                             <i class="fa fa-circle fa-plus" aria-hidden="true"></i>
                                         </button>
@@ -36,10 +36,10 @@
                                             <th>Image</th>
                                             <th>IdFilm</th>
                                             <th>Titre</th>
-                                            <th>Duree</th>
-                                            <th>Année de Sortie</th>
+                                
                                             <th>Qualite</th>
                                             <th>Prix</th>
+                                            <th>Nbrs</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -52,16 +52,15 @@
                                             <td><img src="<?php echo $value['Image']; ?>" width='70' class='rounded-circle' alt=""></td>
                                             <th><?php echo $value['IdFilm'] ?></th>
                                             <td><?php echo $value['Titre']?></td>
-                                            <td><?php echo $value['Duree']?></td>
-                                            <td><?php echo $value['AnneeDeSortie']?></td>
                                             <td><?php echo $value['NomQualite']?></td>
                                             <td><?php echo $value['PrixFilm']?></td>
-                                            
+                                            <td><?php echo $value['NbExemplaire']?></td>
                                             <td style="text-align:center">
-                                                <a href=""><i class="fas fa-edit fa-lg text-success"></i></a>
+                                                <a href="#" data-toggle="modal" data-target="#modalEdit<?php echo $value['IdFilm'] ?>"><i class="fas fa-edit fa-lg text-success"></i></a>
+                                                <?php require "modalEdit.php" ?>
                                                 <a href="#" data-toggle="modal" data-target="#modalsuppr<?php echo $id."".$nom; ?>"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
                                                 <?php require "modalsuppr.php" ?>
-                                                <a href="#" ><i class="fas fa-eye fa-lg text-default"></i></a>
+                                                <!--<a href="#" ><i class="fas fa-eye fa-lg text-default"></i></a>-->
                                             </td>
                                         </tr>
                                         <?php }?>
@@ -105,16 +104,16 @@
 
     
      <!-- Modal ajout -->
-     <div class="modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+     <div class="modal"  id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
          <div class="modal-dialog modal-xl" role="document">
-             <div class="modal-content">
+             <div class="modal-content " >
                  <div class="modal-header">
                      <h5 class="modal-title">Ajouter un Film</h5>
                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                              <span aria-hidden="true">&times;</span>
                          </button>
                  </div>
-                 <div class="modal-body">
+                 <div class="modal-body" >
                     <form action="ajouter" method="post" enctype='multipart/form-data'>
                    
                         <div class="row">
@@ -138,8 +137,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Prix</label>
-                                    <input type="float" name='prixFilm' class="form-control" id="exampleInputEmail1"  placeholder="Prix en Ariary">
+                                    <input type="float" name='prixFilm' id="prix" class="form-control"   placeholder="Prix en Ariary">
                                 </div>
+
+                               
                                 <div class="form-group">
                                   <label for="">Jacket</label>
                                   <input type="file" class="form-control-file" name="image" id="" placeholder="" aria-describedby="fileHelpId">

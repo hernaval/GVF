@@ -85,6 +85,14 @@
             ));
         }
 
+        public function edit($n){
+            $this->update(array(
+                'table' => $this->_table,
+                'modif' => "NbExemplaire = NbExemplaire + $n, PrixFilm = '".$this->_prixFilm."' ",
+                'condition' => "IdFilm = '".$this->_idFilm."'  "
+            ));
+        }
+
         public function setNomQualite($nom){
             $this->_nomQualite = $nom;
         }

@@ -2,6 +2,7 @@
 	
      foreach ($facture as $key => $value) {
          
+         
         $GLOBALS['ref'] =$value['Ref'];
         $GLOBALS['clients'] = $value['NomClient']." ".$value['PrenomClient'];
         $GLOBALS['date'] = $value['DateAchat'];
@@ -20,24 +21,48 @@
 	<link rel="stylesheet" href="<?php  echo WEBROOT?>assets/css/facture.css">
     <script src="<?php echo WEBROOT?>assets/js/jquery-3.4.1.js" ></script>
     <script src="<?php echo WEBROOT?>assets/bootstrap-4.3.1/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="<?php echo WEBROOT?>assets/js/html2pdf.bundle.min.js" ></script>
     <title>FACTURE</title>
 	
 </head>
 <body>
     <div style="position : fixed; top :25px; right :200px; " >
-    <form action="exportFacture" id="makePdf" method="post">
-        <input type="hidden" value ="<?php echo $GLOBALS['ref'] ;?>"name="refFacture">
-        <input type="hidden" id="html_content" name="facture_content">
-        <i id="createPdf" class="animated bounce fa fa-download fa-2x" aria-hidden="true"></i>
-    </form>
-    </div>
-    <script>
-        $("#createPdf").click(()=>{
-            $('#html_content').val($('#factureView').html());
-            $('#makePdf').submit();
-        });
-    </script>
     
+        <button id="createPdf"><i  class="animated bounce fa fa-download fa-2x" aria-hidden="true"></i></button>
+   
+    </div>
+     
+     <script>
+     $('#createPdf').click(function(){
+         
+        var ref = $('#refImp').val();
+        var pdfFileName = ref+'.pdf';
+var element = document.getElementById('element-to-print');
+const options = {
+    margin: 1,
+    filename: pdfFileName,
+    image: {
+        type: 'jpeg',
+        quality: 0.98
+    },
+    html2canvas: {
+        dpi: 192,
+        letterRendering: true
+    },
+    jsPDF: {
+        unit: 'in',
+        format: 'letter',
+        orientation: 'portrait'
+    }
+}
+
+html2pdf(element, options);
+
+
+     });
+       
+     </script>
+    <div  id="element-to-print">
     <div class="modal-dialog modal-lg" id="factureView" role="document">
         <div class="modal-content">
             <div class="modal-body">
@@ -50,6 +75,7 @@
                             <div class="text-wrapper font-weight-bold mx-5 ">
                                 <div class="text-inner">
                                     <div class="lead-description">
+                                        <input type="text" id="refImp" value="<?php echo $GLOBALS['ref']; ?>" hidden>
                                         <p>Ref : <?php echo $GLOBALS['ref']; ?> </p>
                                         <p>Nom et Prénoms : <?php echo $GLOBALS['clients'];?> </p>
 										<p>Date : <?php echo $GLOBALS['date']; ?> </p>
@@ -146,6 +172,8 @@
     </div>
 </div>
 
+
+</div>
 <!--- idina-->
 
 

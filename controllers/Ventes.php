@@ -38,7 +38,7 @@
                 foreach($r as $key ){
                     $prix[] = $key;
                     $nb = $prix[0]['NbExemplaire'] - $_POST['quantite'][$i];
-                }
+             }
                 
 
                 $vente = array(                   
@@ -107,8 +107,32 @@
            
         }
 
+        public function countVente(){
+            $d = $this->Vente->count();
+            
+            $somme = 0;
+            foreach ($d as $key => $value) {
+                $somme += $value['Quantite'];
+            }
+            echo $somme;
+        }
+
+        public function annulation($ref,$idfilm,$prix,$qal,$nb){
+            $details = array(
+                'ref' => $ref,
+                'idFilm' => $idfilm,
+                'prixAchat' => $prix,
+            );
+           
+            
+            $this->Vente->hydrate($details);
+            $this->Vente->annuler();
+           $this->Vente->majNb2($nb,$idfilm,$qal);
+            
+        }
+
         public function revenuChart(){
-            $d = $this->Vente->get();
+            $d = $this->Vente->count();
 
            echo json_encode($d);
            

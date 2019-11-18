@@ -48,6 +48,11 @@
             $this->renderU('categorieFilmListe');
         }
 
+        public function countFilm(){
+            $d = $this->Film->count();
+
+            print_r($d);
+        }
         public function delete($idFilm){
 
             $param = array(

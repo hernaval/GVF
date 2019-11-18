@@ -17,8 +17,10 @@ function refGen($len, $set = "")
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-7 ">
-           
+    <div class="col-md-4">
+            </div>
+        <div class="col-sm-7  ">
+            
             <!-- Modal -->
                 <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
@@ -59,7 +61,6 @@ function refGen($len, $set = "")
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                             <button class='btn btn-outline-success' id="submitBtn"  type="submit" >Enregistrer <i class="fa fa-shopping-bag" aria-hidden="true"></i></button>
 
      </form>
